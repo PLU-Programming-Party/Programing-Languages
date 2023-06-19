@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.input {
+  text-align:left;
+  display:block;
+}
+
+.input textarea {
+  width: 50%;
+  height: 250px;
+  min-width: 20%;
+  max-width: 80%;
+  resize: horizontal;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
