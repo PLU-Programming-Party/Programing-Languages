@@ -12,18 +12,20 @@ code {
     monospace;
 }
 
-.input {
+.ide {
   text-align:left;
-  display:block;
-  padding: 20px 20px;
+  display:inline-block;
 }
 
 .input textarea {
   width: 50%;
   height: 250px;
-  min-width: 20%;
-  max-width: 80%;
-  resize: horizontal;
   padding: 10px 20px;
   border-radius: 4px;
+  resize:none;
+}
+
+.output iframe {
+  width: 50%;
+  height: 250px;
 }
