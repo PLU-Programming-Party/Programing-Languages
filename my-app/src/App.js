@@ -14,8 +14,11 @@ function App() {
 
   return (
     <div className="App">
-        <Input/>
-        <Output srcDoc={srcDoc}/>
+        <div className="ide">
+          <Input/>
+          <Output srcDoc={srcDoc}/>
+        </div>
+        
     </div>
   );
 }
