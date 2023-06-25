@@ -15,10 +15,10 @@ code {
 .ide {
   text-align:left;
   display:inline-block;
-  width:50%
+  width:70%
 }
 
-.input textarea {
+.ide textarea {
   width:100%;
   height: 250px;
   padding: 10px 20px;
