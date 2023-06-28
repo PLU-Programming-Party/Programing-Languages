@@ -1,5 +1,5 @@
 import {useState} from 'react'
-export default function Input() {
+export default function JsIde() {
     const [text, setText] = useState('write js here');
     
     const srcDoc = 

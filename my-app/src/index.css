@@ -30,3 +30,22 @@ code {
   height: 250px;
   width: 100%; 
 }
+
+ul li a {
+  text-decoration: none;
+
+  color: #000;
+ }
+ 
+ ul li a:hover {
+  color: #00a8ff;
+
+ }
+ 
+ ul li a.active {
+  color: #00a8ff;
+
+ }
+ .nav li{
+  list-style-type: none;
+ }
