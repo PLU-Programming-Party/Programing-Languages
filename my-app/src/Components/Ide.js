@@ -1,12 +1,22 @@
 import {useState} from 'react'
 
 export default function JsIde() {
-    const [text, setText] = useState('write js here');
+    const [js, setJs] = useState('console.log("hello")');
+    const [html, setHtml] = useState('<h1>Hello 5S</h1>');
+    const [css, setCss] = useState('h1{color:red}')
     const [srcDoc, setSrcDoc] = useState(''); //srcDoc is the html code the user will manipulate
     const [forceUpdate, setForceUpdate] = useState(0);
 
-    function handleChange(e) {
-        setText(e.target.value);
+    function handleJs(e) {
+        setJs(e.target.value);
+    }
+    
+    function handleHtml(e) {
+        setHtml(e.target.value);
+    }
+
+    function handleCss(e) {
+        setCss(e.target.value);
     }
 
     function rerenderSrcDoc() {
@@ -14,8 +24,9 @@ export default function JsIde() {
             `
             <html>
                 <body>
-                    <h1>Hello 5S</h1>
-                    <script>${text}</script>
+                    ${html}
+                    <script>${js}</script>
+                    <style>${css}</style>
                 </body>
                 
             </html>
@@ -25,9 +36,14 @@ export default function JsIde() {
     }
     return (
         <div className="ide">
-            <textarea value={text} onChange={handleChange} />
-            <button onClick={() => setText('write js here')}>
-                Reset
+            <div className="tabs">
+                <button class="tablinks">js</button>
+                <button class="tablinks">html</button>
+                <button class="tablinks">css</button>
+            </div>
+            <textarea value={js} onChange={handleJs} />
+            <button onClick={() => setJs('')}>
+                Clear
             </button>
             
             <button onClick={rerenderSrcDoc}>Run</button>
