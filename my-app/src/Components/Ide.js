@@ -6,6 +6,30 @@ export default function JsIde() {
     const [css, setCss] = useState('h1{color:red}')
     const [srcDoc, setSrcDoc] = useState(''); //srcDoc is the html code the user will manipulate
     const [forceUpdate, setForceUpdate] = useState(0);
+    
+    
+    function openTab(evt, tabName) {
+        console.log('works!');
+        // Declare all variables
+        var i, tabcontent, tablinks;
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+         }
+
+      // Get all elements with class="tabcontent" and hide them
+      //tabcontent = document.getElementsByClassName("tabcontent");
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+      }
 
     function handleJs(e) {
         setJs(e.target.value);
@@ -37,9 +61,20 @@ export default function JsIde() {
     return (
         <div className="ide">
             <div className="tabs">
-                <button class="tablinks">js</button>
-                <button class="tablinks">html</button>
-                <button class="tablinks">css</button>
+                <button className="tablinks" onClick={event => openTab(event, 'js')}>js</button>
+                <button className="tablinks"  onClick={event => openTab(event, 'html')}>html</button>
+                <button className="tablinks"  onClick={event => openTab(event, 'css')}>css</button>
+            </div> 
+            <div id="js" className="tabcontent">
+                <textarea value={js} onChange={handleJs} />
+
+            </div>
+            <div id="html" className="tabcontent">
+                <textarea value={html} onChange={handleHtml} />
+
+            </div>
+            <div id="css" className="tabcontent">
+                <textarea value={css} onChange={handleCss} />
             </div>
             <textarea value={js} onChange={handleJs} />
             <button onClick={() => setJs('')}>
