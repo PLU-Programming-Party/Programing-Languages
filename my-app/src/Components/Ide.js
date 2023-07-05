@@ -7,7 +7,11 @@ export default function JsIde() {
     const [srcDoc, setSrcDoc] = useState(''); //srcDoc is the html code the user will manipulate
     const [forceUpdate, setForceUpdate] = useState(0);
     
-    
+    function clear () {
+        setJs('');
+        setCss('');
+        setHtml('');
+    }
     function openTab(evt, tabName) {
         console.log('works!');
         // Declare all variables
@@ -61,7 +65,7 @@ export default function JsIde() {
     return (
         <div className="ide">
             <div className="tabs">
-                <button className="tablinks" onClick={event => openTab(event, 'js')}>js</button>
+                <button className="tablinks" onClick={event => openTab(event, 'js')} id="defaultOpen">js</button>
                 <button className="tablinks"  onClick={event => openTab(event, 'html')}>html</button>
                 <button className="tablinks"  onClick={event => openTab(event, 'css')}>css</button>
             </div> 
@@ -76,8 +80,8 @@ export default function JsIde() {
             <div id="css" className="tabcontent">
                 <textarea value={css} onChange={handleCss} />
             </div>
-            <textarea value={js} onChange={handleJs} />
-            <button onClick={() => setJs('')}>
+            
+            <button onClick={clear}>
                 Clear
             </button>
             
