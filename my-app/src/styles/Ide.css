@@ -1,0 +1,79 @@
+.ide {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #BFADD9;
+    gap: 10px;
+}
+.ideTitle {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+
+}
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  
+  /* Style the buttons that are used to open the tab content */
+  .tabs {
+    display: flex;
+    justify-content: center;
+  }
+  .tabs button {
+	border: none;
+    color: white;
+    background-color: #8C8C8C;
+    cursor: pointer;
+    padding: 5px;
+    
+  }
+  
+  /* Change background color of buttons on hover */
+  .tabs button:hover {
+    
+  }
+  
+  /* Create an active/current tablink class */
+  .tabs button.active {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    border-top: none;
+  }
+  .tabBox {
+    width: 100%;
+    height: 250px;
+    background-color: white;
+  }
+  .ide textarea {
+    width: 100%;
+    height: 250px;
+    padding: 10px 20px;
+    border: none;
+    resize:none;
+    box-sizing: border-box; 
+  }
+  
+  .output iframe {
+    height: 250px;
+    width: 100%; 
+    box-sizing: border-box; 
+    background-color: white;
+  }
+  .IdeButtons button {
+    border: none;
+  }
+  #run {
+    background-color: green;
+    color: white;
+  }

@@ -1,9 +1,10 @@
 import JsIde from "../Components/Ide"
+import '../styles/Home.css'
 export default function Home() {
     return (
         <>
-            <JsIde></JsIde>
             <h3>In Home</h3>
+            <JsIde></JsIde>
         </>
     )
 }
