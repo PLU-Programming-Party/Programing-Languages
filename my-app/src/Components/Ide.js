@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import '../styles/Ide.css';
 
 export default function JsIde() {
@@ -9,7 +9,6 @@ export default function JsIde() {
     const [srcDoc, setSrcDoc] = useState(''); //srcDoc is the  code the user will manipulate
     const [forceUpdate, setForceUpdate] = useState(0);
     
-
 
     function clear () {
         setJs('');
@@ -23,7 +22,7 @@ export default function JsIde() {
      * @param event: click event object that triggered openTab
      * @param tabName: the name of tab being opened
      */
-    function openTab(event, tabName) {
+    function openTab(tabName) {
         let tabcontent, tablinks;
 
         // Get all elements with class="tabcontent" and hide them
@@ -40,7 +39,7 @@ export default function JsIde() {
 
         // Shows the current tab, and add an "active" class to that button tab
         document.getElementById(tabName).style.display = "block";
-        event.currentTarget.className += " active";
+        document.getElementById(tabName+"button").className += " active";
     }
 
     function handleJs(e) {
@@ -71,14 +70,19 @@ export default function JsIde() {
         setForceUpdate(forceUpdate + 1); 
     }
 
+    //defaults to js tab on load 
+    useEffect(() => {
+        document.getElementById('jsbutton').click();
+      }, []);
+
     return (
         <div className="ide">
             <div className="ideTitle">Choose a tab below</div>
             <div className="inputArea">
                 <div className="tabs">
-                    <button className="tablinks" onClick={event => openTab(event, 'js')} id="defaultOpen">js</button>
-                    <button className="tablinks"  onClick={event => openTab(event, 'html')}>html</button>
-                    <button className="tablinks"  onClick={event => openTab(event, 'css')}>css</button>
+                    <button className="tablinks" onClick={() => openTab('js')} id="jsbutton">js</button>
+                    <button className="tablinks"  onClick={() => openTab('html')} id="htmlbutton">html</button>
+                    <button className="tablinks"  onClick={() => openTab('css')} id="cssbutton">css</button>
                 </div> 
 
                 <div className="tabBox">
