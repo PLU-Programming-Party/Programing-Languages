@@ -2,10 +2,14 @@ import {useState, useEffect} from 'react'
 import '../styles/Ide.css';
 
 export default function JsIde() {
-    //default values for the IDE's
-    const [js, setJs] = useState('console.log("hello")');
-    const [html, setHtml] = useState('<h1>Hello 5S</h1>');
-    const [css, setCss] = useState('h1{color:red}')
+    //gets stored code 
+    const storedJs = JSON.parse(localStorage.getItem('js'));
+    const storedHtml = JSON.parse(localStorage.getItem('html'));
+    const storedCss = JSON.parse(localStorage.getItem('css'));
+    //default values is the stored state
+    const [js, setJs] = useState(storedJs);
+    const [html, setHtml] = useState(storedHtml);
+    const [css, setCss] = useState(storedCss);
     const [srcDoc, setSrcDoc] = useState(''); //srcDoc is the  code the user will manipulate
     const [forceUpdate, setForceUpdate] = useState(0);
     
@@ -74,6 +78,13 @@ export default function JsIde() {
     useEffect(() => {
         document.getElementById('jsbutton').click();
       }, []);
+    
+    //stores code 
+    useEffect(() => {
+        localStorage.setItem('js', JSON.stringify(js));
+        localStorage.setItem('html', JSON.stringify(html));
+        localStorage.setItem('css', JSON.stringify(css));
+    }, [js, html, css]);
 
     return (
         <div className="ide">
@@ -87,7 +98,7 @@ export default function JsIde() {
 
                 <div className="tabBox">
                 
-                    <div id="js" className="tabcontent">
+                 <div id="js" className="tabcontent">
                         <textarea value={js} onChange={handleJs} />
                     </div>
                     <div id="html" className="tabcontent">
