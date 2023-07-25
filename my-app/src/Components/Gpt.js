@@ -1,5 +1,6 @@
 import axios from "axios";
 import {useState} from 'react';
+import '../styles/Gpt.css'
 
 export default function Gpt() {
   const [prompt, setPrompt] = useState("");
@@ -21,7 +22,7 @@ export default function Gpt() {
   };
 
   return (
-    <div>
+    <div className="gpt">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
