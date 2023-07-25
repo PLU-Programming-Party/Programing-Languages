@@ -1,6 +1,7 @@
 
 .ide {
-    display:inline;
+    display:inline-block;
+    float:left;
     width: 50%;
     display: flex;
     flex-direction: column;
