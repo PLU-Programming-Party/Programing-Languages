@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.css';
 import NavBar from './Components/NavBar';
 import NoMatch from './Pages/NoMatch';
 import { Routes, Route } from 'react-router-dom';
@@ -15,10 +15,6 @@ function App() {
         <Route path="/studyplan" element={<StudyPlan />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
-    
-    
-    
-    
     </>
     /*
     <div className="App">

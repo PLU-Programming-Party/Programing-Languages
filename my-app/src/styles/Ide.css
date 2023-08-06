@@ -3,8 +3,22 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-    background-color: #BFADD9;
-    gap: 10px;
+    background-color: #241D26;
+    align-items: center;
+    gap: 24px;
+}
+.inputArea {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ide textarea {
+  width: 100%;
+  height: 250px;
+  padding: 10px 20px;
+  resize:none;
+  box-sizing: border-box; 
 }
 .ideTitle {
     color: white;
@@ -25,18 +39,23 @@
     display: flex;
     justify-content: center;
   }
-  .tabs button {
-	border: none;
+  .tabs > button {
+    width: 84px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: bold;
+	  border: none;
     color: white;
-    background-color: #8C8C8C;
+    background-color: #F25757;
     cursor: pointer;
-    padding: 5px;
-    
+    padding: 4px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
   }
   
   /* Change background color of buttons on hover */
   .tabs button:hover {
-    
+    transform: scale(1.05);
   }
   
   /* Create an active/current tablink class */
@@ -55,25 +74,43 @@
     height: 250px;
     background-color: white;
   }
-  .ide textarea {
-    width: 100%;
-    height: 250px;
-    padding: 10px 20px;
-    border: none;
-    resize:none;
-    box-sizing: border-box; 
-  }
   
+  .output {
+    width: 90%;
+  }
   .output iframe {
     height: 250px;
     width: 100%; 
     box-sizing: border-box; 
     background-color: white;
   }
-  .IdeButtons button {
+  .ideTopSection {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+  .IdeButtons {
+   display: flex;
+   gap: 12px;
+  }
+  .IdeButtons > button {
     border: none;
+    width: 84px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  .IdeButtons > button:hover {
+    transform: scale(1.05);
+  }
+  .IdeButtons > button:active {
+    transform: translate(0em, 0.2em);
   }
   #run {
-    background-color: green;
     color: white;
+    background-color: #3DD980;
   }

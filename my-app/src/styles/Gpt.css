@@ -1,0 +1,44 @@
+.gptContainer {
+    width: 50%;
+    background-color: #3DD980;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    overflow-x: scroll;
+}
+.gptResponse {
+    width: 90%;
+    height: 70vh;
+    padding: 10px;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:justify;
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+
+}
+.gptContainer > form {
+    display: flex;
+    gap: 12px;
+}
+.gptSubmit {
+    border: none;
+    width: 84px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #29A5F2;
+}
+.gptSubmit:hover {
+    transform: scale(1.05);
+}
+.gptSubmit:active {
+    transform: translate(0em, 0.2em);
+}

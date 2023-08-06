@@ -1,3 +1,4 @@
-h3 {
-    text-align: center;
+.homeContainer {
+    display: flex;
+    justify-content: center;
 }

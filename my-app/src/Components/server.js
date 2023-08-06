@@ -3,9 +3,10 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const { Configuration, OpenAIApi } = require("openai");
+require('dotenv').config();
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.REACT_APP_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
@@ -20,15 +21,24 @@ app.post("/", async (req, res) => {
   const { prompt } = req.body;
 
   // Generate a response with ChatGPT
-  const completion = await openai.createCompletion({
-    model: "text-davinci-002",
-    prompt: prompt,
+  const response = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    messages: [
+        {
+            "role": "system",
+            "content": "you must only respond in markdown, also this text will be on a website so you dont have to respond to the message, just gimme the content"
+        },
+        {
+            "role": "user",
+            "content": prompt
+        }
+    ]
   });
-  res.send(completion.data.choices[0].text);
+  res.send(response.data.choices[0].message.content);
 });
 
 // Start the server
-const port = 3000;
+const port = 3001;
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

@@ -1,5 +1,8 @@
+import GptForm from "../Components/GptForm"
 export default function StudyPlan() {
     return (
-        <h3>In Study Plan</h3>
+        <>
+            <GptForm></GptForm>
+        </>
     )
 }

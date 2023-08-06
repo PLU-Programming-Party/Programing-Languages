@@ -88,10 +88,10 @@ export default function JsIde() {
 
     return (
         <div className="ide">
-            <div className="ideTitle">Choose a tab below</div>
+            <h2>Choose a tab below</h2>
             <div className="inputArea">
                 <div className="tabs">
-                    <button className="tablinks" onClick={() => openTab('js')} id="jsbutton">js</button>
+                    <button className="tablinks" onClick={() => openTab('js')} id="jsbutton">javascript</button>
                     <button className="tablinks"  onClick={() => openTab('html')} id="htmlbutton">html</button>
                     <button className="tablinks"  onClick={() => openTab('css')} id="cssbutton">css</button>
                 </div> 
@@ -111,11 +111,13 @@ export default function JsIde() {
                 </div>
             </div>
             
-            <div className = "IdeButtons">
-                <button id="clear" onClick={clear}>Clear</button>
-                <button id="run" onClick={rerenderSrcDoc}>Run</button>
+            <div className="ideTopSection">
+                <h2>Output</h2>
+                <div className = "IdeButtons">
+                    <button id="clear" onClick={clear}>Clear</button>
+                    <button id="run" onClick={rerenderSrcDoc}>Run</button>
+                </div>
             </div>
-
             <div className="output">
                 <iframe
                 key={forceUpdate} //makes it so the iframe "changes" for a rerender 
