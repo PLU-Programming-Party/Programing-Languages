@@ -21,7 +21,6 @@ app.post("/", async (req, res) => {
   const { prompt } = req.body;
 
   // Generate a response with ChatGPT
-<<<<<<< HEAD
   const response = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [
@@ -34,12 +33,6 @@ app.post("/", async (req, res) => {
             "content": prompt
         }
     ]
-=======
-  const completion = await openai.createCompletion({
-    model: "text-davinci-002",
-    prompt: prompt,
-    max_tokens: 1024
->>>>>>> 4bae5816f25ecf24c692bf1f40f061c0b71d8f01
   });
   res.send(response.data.choices[0].message.content);
 });

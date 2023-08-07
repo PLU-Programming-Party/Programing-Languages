@@ -1,14 +1,10 @@
 import axios from "axios";
 import {useState} from 'react';
-<<<<<<< HEAD
 import "../styles/Gpt.css"
 import ReactMarkdown from 'react-markdown'
 import LoadingGraphic from '../Loading_icon.gif'; // Import the loading graphic
 
 
-=======
-import '../styles/Gpt.css'
->>>>>>> 4bae5816f25ecf24c692bf1f40f061c0b71d8f01
 
 export default function Gpt() {
   const [prompt, setPrompt] = useState("");
@@ -37,12 +33,8 @@ export default function Gpt() {
   };
 
   return (
-<<<<<<< HEAD
     <div className="gptContainer">
       <h2>What do you want to learn?</h2>
-=======
-    <div className="gpt">
->>>>>>> 4bae5816f25ecf24c692bf1f40f061c0b71d8f01
       <form onSubmit={handleSubmit}>
         <input
           type="text"
