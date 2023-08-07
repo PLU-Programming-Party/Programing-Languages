@@ -2,7 +2,7 @@ import axios from "axios";
 import {useState} from 'react';
 import "../styles/Gpt.css"
 import ReactMarkdown from 'react-markdown'
-import LoadingGraphic from '../Loading_icon.gif'; // Import the loading graphic
+import LoadingGraphic from '../Assets/Loading_icon.gif'; // Import the loading graphic
 
 
 
