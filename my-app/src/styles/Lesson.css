@@ -1,0 +1,14 @@
+.markdown-content ul, 
+.markdown-content ol {
+  display: block;
+  list-style-type: disc; /* Default for unordered lists. For ordered lists, the browser defaults will apply */
+  padding-left: 40px; /* Adjust as necessary to control indentation */
+}
+
+.markdown-content li {
+  display: list-item;
+  text-align: -webkit-match-parent; /* Ensures text-align works correctly within list items */
+}
+.markdown-content h2 {
+  color: #E31E24;
+}
