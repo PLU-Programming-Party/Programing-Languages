@@ -28,7 +28,7 @@
     "web-vitals": "^2.1.4"
   },
 
-  "homepage": "https://PLU-Programming-Party.github.io/Programing-Languages/",
+  "homepage": "https://plu-programming-party.github.io/Programing-Languages/",
 
   "scripts": {
     "start": "react-scripts start",
